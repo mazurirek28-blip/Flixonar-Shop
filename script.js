@@ -28,3 +28,10 @@ function checkout() {
     total = 0;
     updateCart();
 }
+
+// Licznik globalny (countapi.xyz)
+fetch('https://api.countapi.xyz/hit/flixonarshop/visits')
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById('visitor-count').textContent = "👀 Liczba odwiedzin: " + data.value;
+  });
